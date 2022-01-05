@@ -1,53 +1,123 @@
 import * as React from "react"
 
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
   Box,
+  Image,
+  List,
+  ListItem,
+  ListIcon,
+  Wrap,
+  WrapItem,
+  Text,
+  Container,
+  Divider,
+  Badge,
+  Link,
+  Stack,
+  Button,
+  Tag,
+  TagLabel,
+  TagLeftIcon,
 } from '@chakra-ui/react'
+import profile from '../images/profile.jpg'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { SiGmail } from 'react-icons/si'
+import { 
+  RiCamera3Line, 
+  RiCameraLensLine, 
+  RiGithubFill,
+  RiInstagramLine,
+  RiAccountPinBoxFill
+} from 'react-icons/ri'
 
 export const Contact = () => (
     <Box padding={'20px'}>
+      <Wrap px="1rem" spacing={5} justify={"center"}>
+        
+        <WrapItem>
+            <Image
+              src={profile}
+              maxW={'320px'}
+              minW={'160px'}
+            />
+        </WrapItem>
+        
+        <WrapItem>
+          <Container>
+            <Text paddingBottom={5} fontSize={'1.1rem'}>
+              A little bit about myself, my name is <Badge colorScheme='red' fontSize={'1.1rem'}>Hau</Badge> and there's a long story behind the pronunciation
+              and meaning, all of which I will happily tell you over a cup of tea or coffee.
+            </Text>
+            
+            <Text paddingBottom={5} fontSize={'1.1rem'}>
+              I take pictures every now and then, find them in the <Badge colorScheme='pink' fontSize={'1.0rem'}>Gallery</Badge>.
+              Currently based in <Badge colorScheme='green' fontSize={'1.0rem'}>Tokyo</Badge>, feel free to contact me for a impromptu photoshoot, no charge except for maybe a cup of coffee ☕
+            </Text>
+
+            <Text fontSize={'1.1rem'}>
+              A coffee addict who plays a bit of guitar, maybe one day I'll be good enough for a   
+              <Button
+                height='24px'
+                isLoading
+                loadingText='YouTube'
+                colorScheme='red'
+                variant='outline'
+                spinnerPlacement='start'
+                marginLeft='10px'
+              >
+                Youtube channel
+              </Button>
+            </Text>
+
+            <Divider 
+              orientation='horizontal'
+              padding={5}
+            />
+            <List spacing={4} paddingTop={10}>
+              <ListItem>
+                <ListIcon as={RiCamera3Line} color='green.500' />
+                <Link href='https://cweb.canon.jp/eos/special/kisssp/x9i-feature/index.html' isExternal color='teal.500'>
+                Camera: Canon EOS Kiss X9i <ExternalLinkIcon mx='2px' />
+                </Link>
+              </ListItem>
+
+              <ListItem>
+                <ListIcon as={RiCameraLensLine} color='green.500' />
+                <Link href='https://cweb.canon.jp/ef/lineup/ef-s/ef-s18-55-f4-56is-stm/' isExternal color='teal.500'>
+                Lens: EF-S18-55mm F4-5.6 IS STM <ExternalLinkIcon mx='2px' />
+                </Link>
+              </ListItem>
+
+              <ListItem>
+                <ListIcon as={RiCameraLensLine} color='green.500' />
+                <Link href='https://cweb.canon.jp/ef/lineup/ef-s/ef-s55-250-f4-56is-stm/' isExternal color='teal.500'>
+                Lens: EF-S55-250mm F4-5.6 IS STM <ExternalLinkIcon mx='2px' />
+                </Link>
+              </ListItem>
+              
+            </List>
+            
+          </Container>
+        </WrapItem>
+
+        <WrapItem paddingTop={5}>
+          <Stack direction='row' spacing={4}>
+            <Tag size={'lg'} variant='subtle' colorScheme='cyan'>
+              <TagLeftIcon boxSize='12px' as={SiGmail} />
+              <TagLabel>trunghau60@gmail.com</TagLabel>
+            </Tag>
+            <Button spinner={<RiInstagramLine />} colorScheme='pink' variant='solid' isLoading spinnerPlacement='start' loadingText='Instagram'>
+              Instagram
+            </Button>
+            <Button leftIcon={<RiGithubFill />} colorScheme='teal' variant='outline' as='a' href="https://github.com/Beomus" target='_blank'>
+              GitHub
+            </Button>
+            <Button leftIcon={<RiAccountPinBoxFill />} colorScheme='blue' variant='outline' as='a' href="https://thatshau.com/" target='_blank' isActive>
+              For Work
+            </Button>
+          </Stack>
+        </WrapItem>
       
-      <Accordion defaultIndex={[0]} allowMultiple>
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex='1' textAlign='left'>
-                Section 1 title
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.
-          </AccordionPanel>
-        </AccordionItem>
-
-        <AccordionItem>
-          <h2>
-            <AccordionButton>
-              <Box flex='1' textAlign='left'>
-                Section 2 title
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.
-          </AccordionPanel>
-        </AccordionItem>
-
-      </Accordion>
-    
+      </Wrap>
     </Box>
 )
