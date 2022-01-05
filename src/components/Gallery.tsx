@@ -2,6 +2,7 @@ import * as React from "react"
 import { 
   Box,
   Button,
+  Center,
   Image,
   Wrap,
   WrapItem,
@@ -9,7 +10,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalBody,
-  ModalCloseButton,
   useDisclosure,
 } from '@chakra-ui/react'
 import images from './Images'
@@ -18,10 +18,23 @@ import images from './Images'
 
 function Gallery() {
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const [selectedImage, setSelectedImage] = React.useState(images[0])
+
+  const expandModal = (image: React.SetStateAction<{ src: any; id: number }>) => {
+    setSelectedImage(image);
+    onOpen();
+  }
+
+  const closeModal = () => {
+    setSelectedImage(selectedImage);
+    onClose();
+  }
+
   return ( 
     <Box padding={'20px'}>
       <Wrap px="1rem" spacing={10} justify={"center"}>
-        { images.map(({src, id}) => (
+        { images.map((image) => (
           <WrapItem
             boxShadow="base"
             rounded="20px"
@@ -36,30 +49,39 @@ function Gallery() {
               size={'auto'}
               minH='200px'
               minW='300px'
-              onClick={onOpen}
+              onClick={() => expandModal(image)}
             >
             <Image
               objectFit='cover'
               boxSize={'auto'}
               boxShadow={'lg'}
-              src={src}
-              key={id}
+              src={image.src}
               loading="lazy"
             />
             </Button>
 
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal
+              isOpen={isOpen}
+              onClose={closeModal}
+              size='lg'
+              isCentered
+              motionPreset='scale'
+              scrollBehavior='outside'
+            >
               <ModalOverlay />
               <ModalContent>
-                <ModalCloseButton />
-                <ModalBody>
-                  <Image
-                    objectFit='contain'
-                    src={src}
-                    key={id}
-                  />
+                <ModalBody padding={'0 0 0 0'}>
+                  <Center>
+                    <Image
+                      maxH='900px'
+                      maxW='900px'
+                      size={'auto'}
+                      
+                      objectFit='cover'
+                      src={selectedImage.src}
+                    />
+                  </Center>
                 </ModalBody>
-
               </ModalContent>
             </Modal>
           </WrapItem>
