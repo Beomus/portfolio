@@ -13,7 +13,7 @@ import {
   Divider,
   Badge,
   Link,
-  Stack,
+  Center,
   Button,
   Tag,
   TagLabel,
@@ -101,21 +101,34 @@ export const Contact = () => (
         </WrapItem>
 
         <WrapItem paddingTop={5}>
-          <Stack direction='row' spacing={4}>
-            <Tag size={'lg'} variant='subtle' colorScheme='cyan'>
-              <TagLeftIcon boxSize='12px' as={SiGmail} />
-              <TagLabel>trunghau60@gmail.com</TagLabel>
-            </Tag>
-            <Button spinner={<RiInstagramLine />} colorScheme='pink' variant='solid' isLoading spinnerPlacement='start' loadingText='Instagram'>
-              Instagram
-            </Button>
-            <Button leftIcon={<RiGithubFill />} colorScheme='teal' variant='outline' as='a' href="https://github.com/Beomus" target='_blank'>
-              GitHub
-            </Button>
-            <Button leftIcon={<RiAccountPinBoxFill />} colorScheme='blue' variant='outline' as='a' href="https://thatshau.com/" target='_blank' isActive>
-              For Work
-            </Button>
-          </Stack>
+          <Wrap px="1rem" spacing={4} justify={"center"}>
+            <WrapItem>
+              <Center height={38}>
+                <Tag size={'lg'} variant='subtle' colorScheme='cyan'>
+                  <TagLeftIcon boxSize='12px' as={SiGmail} />
+                  <TagLabel>trunghau60@gmail.com</TagLabel>
+                </Tag>
+              </Center>
+            </WrapItem>
+
+            <WrapItem>
+              <Button spinner={<RiInstagramLine />} colorScheme='pink' variant='solid' isLoading spinnerPlacement='start' loadingText='Instagram'>
+                Instagram
+              </Button>
+            </WrapItem>
+
+            <WrapItem>
+              <Button leftIcon={<RiGithubFill />} colorScheme='teal' variant='outline' as='a' href="https://github.com/Beomus" target='_blank'>
+                GitHub
+              </Button>
+            </WrapItem>
+
+            <WrapItem>
+              <Button leftIcon={<RiAccountPinBoxFill />} colorScheme='blue' variant='outline' as='a' href="https://thatshau.com/" target='_blank' isActive>
+                For Work
+              </Button>
+            </WrapItem>
+          </Wrap>
         </WrapItem>
       
       </Wrap>
