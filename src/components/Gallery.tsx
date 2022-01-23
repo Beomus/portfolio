@@ -60,33 +60,34 @@ function Gallery() {
             />
             </Button>
 
-            <Modal
-              isOpen={isOpen}
-              onClose={closeModal}
-              size='lg'
-              isCentered
-              motionPreset='scale'
-              scrollBehavior='outside'
-            >
-              <ModalOverlay />
-              <ModalContent>
-                <ModalBody padding={'0 0 0 0'}>
-                  <Center>
-                    <Image
-                      maxH='900px'
-                      maxW='900px'
-                      size={'auto'}
-                      
-                      objectFit='cover'
-                      src={selectedImage.src}
-                    />
-                  </Center>
-                </ModalBody>
-              </ModalContent>
-            </Modal>
           </WrapItem>
         ))}
       </Wrap>
+
+      <Modal
+        isOpen={isOpen}
+        onClose={closeModal}
+        size='lg'
+        isCentered
+        motionPreset='scale'
+        scrollBehavior='outside'
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalBody padding={'0 0 0 0'}>
+            <Center>
+              <Image
+                maxH='1200px'
+                maxW='1200px'
+                size={'auto'}
+                
+                objectFit='cover'
+                src={selectedImage.src}
+              />
+            </Center>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   ) 
 }
