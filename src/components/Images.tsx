@@ -30,7 +30,7 @@ type CustomImage = {
 }
 const images: Array<CustomImage> = []
 
-for (var i = 0; i < imgsLength - 1; i++) {
+for (var i = 0; i < imgsLength; i++) {
   console.log(imgs[i], i)
   images.push({src: imgs[i], id: i})
 }
