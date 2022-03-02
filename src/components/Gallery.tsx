@@ -13,7 +13,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 import images from './Images'
-import InfiniteScroll from "react-infinite-scroll-component";
+
 
 
 function Gallery() {
@@ -31,55 +31,37 @@ function Gallery() {
     onClose();
   }
 
-  var currentImageIndex = 0
-
-  var currentImages = images.slice(currentImageIndex, currentImageIndex+6)
-
-  const fetchImages = () => {
-    currentImageIndex = currentImageIndex + 6;
-    currentImages = currentImages.concat(images.slice(currentImageIndex + 1, currentImageIndex + 6))
-  }
-
   return ( 
     <Box padding={'20px'}>
       <Wrap px="1rem" spacing={10} justify={"center"}>
-        <InfiniteScroll
-          dataLength={images.length}
-          next={fetchImages}
-          hasMore={true}
-          loader={<h4>Loading...</h4>}
-        >
-        <Wrap px="1rem" spacing={10} justify={"center"}>
-          { currentImages.map((image) => (
-            <WrapItem
-              boxShadow="base"
-              rounded="20px"
-              overflow="hidden"
-              lineHeight={2}
-              _hover={{ boxShadow: "dark-lg"}}
+        { images.map((image) => (
+          <WrapItem
+            boxShadow="base"
+            rounded="20px"
+            overflow="hidden"
+            lineHeight={2}
+            _hover={{ boxShadow: "dark-lg"}}
+          >
+            <Button
+              variant='link'
+              maxH='400'
+              maxW='600'
+              size={'auto'}
+              minH='200px'
+              minW='300px'
+              onClick={() => expandModal(image)}
             >
-              <Button
-                variant='link'
-                maxH='400'
-                maxW='600'
-                size={'auto'}
-                minH='200px'
-                minW='300px'
-                onClick={() => expandModal(image)}
-              >
-              <Image
-                objectFit='cover'
-                boxSize={'auto'}
-                boxShadow={'lg'}
-                src={image.src}
-                loading="lazy"
-              />
-              </Button>
+            <Image
+              objectFit='cover'
+              boxSize={'auto'}
+              boxShadow={'lg'}
+              src={image.src}
+              loading="lazy"
+            />
+            </Button>
 
-            </WrapItem>
-          ))}
-          </Wrap>
-        </InfiniteScroll>
+          </WrapItem>
+        ))}
       </Wrap>
 
       <Modal
