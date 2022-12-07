@@ -79,8 +79,6 @@ function Gallery() {
               <Image
                 maxH='1200px'
                 maxW='1200px'
-                size={'auto'}
-                
                 objectFit='cover'
                 src={selectedImage.src}
               />
