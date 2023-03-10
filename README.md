@@ -23,3 +23,12 @@ Here's what it looks like because nobody will clone and build and run this.
 ![contactwhite](./assets/contactwhite.png)
 
 ![contactwhite](./assets/contactdark.png)
+
+```bash
+docker container run \
+    --rm \
+    --detach \
+    --publish 3000:3000 \
+    --name portfolio-dev \
+    portfolio:dev
+```
