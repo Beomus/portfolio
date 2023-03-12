@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/beomus.github.io/portfolio/static/js/main.61aa71a8.js",
+    "main.js": "/beomus.github.io/portfolio/static/js/main.3e1eea23.js",
     "static/js/377.55cb6d37.chunk.js": "/beomus.github.io/portfolio/static/js/377.55cb6d37.chunk.js",
-    "static/media/_DSF5394.jpg": "/beomus.github.io/portfolio/static/media/_DSF5394.d14167fb7883ed3f8310.jpg",
-    "static/media/_DSF4076.jpg": "/beomus.github.io/portfolio/static/media/_DSF4076.e399d49957f96416ec7c.jpg",
+    "static/media/DSF5394.jpg": "/beomus.github.io/portfolio/static/media/DSF5394.d14167fb7883ed3f8310.jpg",
+    "static/media/DSF4076.jpg": "/beomus.github.io/portfolio/static/media/DSF4076.e399d49957f96416ec7c.jpg",
     "static/media/2023-02-25_11-01-12_000.jpeg": "/beomus.github.io/portfolio/static/media/2023-02-25_11-01-12_000.53d03d92402a93d5a797.jpeg",
     "static/media/2023-02-25_11-00-16_000.jpeg": "/beomus.github.io/portfolio/static/media/2023-02-25_11-00-16_000.7e46f628bc77f404f9e9.jpeg",
     "static/media/17.jpg": "/beomus.github.io/portfolio/static/media/17.ae8899cb47c4654af54f.jpg",
@@ -24,10 +24,10 @@
     "static/media/01.jpg": "/beomus.github.io/portfolio/static/media/01.b86dd9abcec9246d88f3.jpg",
     "static/media/14.jpg": "/beomus.github.io/portfolio/static/media/14.100a6c549fc77afc1ceb.jpg",
     "index.html": "/beomus.github.io/portfolio/index.html",
-    "main.61aa71a8.js.map": "/beomus.github.io/portfolio/static/js/main.61aa71a8.js.map",
+    "main.3e1eea23.js.map": "/beomus.github.io/portfolio/static/js/main.3e1eea23.js.map",
     "377.55cb6d37.chunk.js.map": "/beomus.github.io/portfolio/static/js/377.55cb6d37.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.61aa71a8.js"
+    "static/js/main.3e1eea23.js"
   ]
 }
