@@ -20,7 +20,7 @@ import {
   TagLeftIcon,
   VStack,
 } from '@chakra-ui/react'
-import profile from '../images/profile/profile.jpg'
+import profile from '../images/profile/profile.jpeg'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { SiGmail } from 'react-icons/si'
 import { 

@@ -24,6 +24,8 @@ Here's what it looks like because nobody will clone and build and run this.
 
 ![contactwhite](./assets/contactdark.png)
 
+Docker command for running inside an iamge on my raspberry pi
+
 ```bash
 docker container run \
     --rm \
@@ -32,3 +34,7 @@ docker container run \
     --name portfolio-dev \
     portfolio:dev
 ```
+
+For some reasons, this is automatically published under my other domain
+[`thatshau.com/portfolio`](https://www.thatshau.com/portfolio) which is another instance of `gh-pages`, either way,
+I'm not complaining about free hosting.
